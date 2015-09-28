@@ -63,6 +63,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </template>
   </test-fixture>
 
+  <test-fixture id="UniqueIds">
+    <template>
+      <iron-label></iron-label>
+      <iron-label></iron-label>
+    </template>
+  </test-fixture>
+
   <script>
     suite('basic', function() {
 
@@ -74,6 +81,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       test('id not overwritten if given', function() {
         var label = fixture('ExplicitId');
         assert.equal(label.id, 'explicit', 'explict id is kept');
+      });
+
+      test('ids are unique', function() {
+        var labels = fixture('UniqueIds');
+        assert.notEqual(labels[0].id, labels[1].id);
       });
 
       a11ySuite('TrivialWrapper');

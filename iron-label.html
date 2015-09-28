@@ -55,7 +55,7 @@ All taps on the `iron-label` will be forwarded to the "target" element.
 
 <dom-module id="iron-label">
   <script>
-    Polymer({
+    Polymer.IronLabel = Polymer({
       is: 'iron-label',
 
       listeners: {
@@ -84,13 +84,10 @@ All taps on the `iron-label` will be forwarded to the "target" element.
         this._generateLabelId();
       },
 
-      // global counter for unique label ids
-      __labelNumber: 0,
-
       // generate a unique id for this element
       _generateLabelId: function() {
         if (!this.id) {
-          var id = 'iron-label-' + this.__labelNumber++;
+          var id = 'iron-label-' + Polymer.IronLabel._labelNumber++;
           Polymer.dom(this).setAttribute('id', id);
         }
       },
@@ -137,5 +134,8 @@ All taps on the `iron-label` will be forwarded to the "target" element.
         this._applyLabelledBy();
       }
     });
+
+    // global counter for unique label ids
+    Polymer.IronLabel._labelNumber = 0;
   </script>
 </dom-module>
