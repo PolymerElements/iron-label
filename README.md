@@ -1,5 +1,21 @@
-# iron-label
-A version of the `<label>` element that works with custom elements as well as native elements.
+
+<!---
+
+This README is automatically generated from the comments in these files:
+iron-label.html
+
+Edit those files, and our readme bot will duplicate them over here!
+Edit this file, and the bot will squash your changes :)
+
+-->
+
+_[Demo and API Docs](https://elements.polymer-project.org/elements/iron-label)_
+
+
+##&lt;iron-label&gt;
+
+
+`<iron-label>` provides a version of the `<label>` element that works with Custom Elements as well as native elements.
 
 All text in the `iron-label` will be applied to the target element as a screen-reader accessible description.
 
@@ -36,3 +52,5 @@ element in the same document or ShadowRoot:
         <paper-button id="foo">Far away button</paper-button>
 
 All taps on the `iron-label` will be forwarded to the "target" element.
+
+
