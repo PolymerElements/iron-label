@@ -73,9 +73,15 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <script>
     suite('basic', function() {
 
-      test('id generated on creation', function() {
+      test('id generated on creation', function(done) {
         var e = document.createElement('iron-label');
-        assert(e.id, 'iron-label-0');
+        document.body.appendChild(e);
+        Polymer.Base.async(function() {
+          assert(e.id, 'iron-label-0');
+          document.body.removeChild(e);
+          done();
+        }, 1);
+
       });
 
       test('id not overwritten if given', function() {
