@@ -17,7 +17,7 @@ thing! https://github.com/PolymerLabs/tedium/issues
 _[Demo and API docs](https://elements.polymer-project.org/elements/iron-label)_
 
 
-##&lt;iron-label&gt;
+## &lt;iron-label&gt;
 
 `<iron-label>` provides a version of the `<label>` element that works with Custom Elements as well as native elements.
 
