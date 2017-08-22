@@ -1,0 +1,23 @@
+{
+  "name": "@polymer/iron-label",
+  "flat": true,
+  "version": "3.0.0-pre.1",
+  "description": "A version of the `<label>` element that works with custom elements as well as native elements",
+  "contributors": "The Polymer Authors",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "label"
+  ],
+  "main": "iron-label.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-label"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/PolymerElements/iron-label",
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0-pre.1"
+  },
+  "devDependencies": {}
+}
