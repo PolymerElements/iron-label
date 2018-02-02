@@ -1,0 +1,10 @@
+{
+  "name": "@polymer/iron-label",
+  "private": true,
+  "description": "A version of the `<label>` element that works with custom elements as well as native elements",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PolymerElements/iron-label"
+  },
+  "license": "http://polymer.github.io/LICENSE.txt"
+}
