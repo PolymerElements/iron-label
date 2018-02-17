@@ -20,17 +20,17 @@ declare namespace Polymer {
      */
     for: string|null|undefined;
     _forElement: Element|null;
-    attached(): any;
-    ready(): any;
+    attached(): void;
+    ready(): void;
 
     /**
      * generate a unique id for this element
      */
-    _generateLabelId(): any;
+    _generateLabelId(): void;
     _findTarget(): any;
-    _tapHandler(ev: any): any;
-    _applyLabelledBy(): any;
-    _forChanged(): any;
+    _tapHandler(ev: any): void;
+    _applyLabelledBy(): void;
+    _forChanged(): void;
   }
 }
 
