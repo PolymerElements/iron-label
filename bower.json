@@ -1,6 +1,6 @@
 {
   "name": "iron-label",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "A version of the `<label>` element that works with custom elements as well as native elements",
   "authors": "The Polymer Authors",
   "keywords": [
