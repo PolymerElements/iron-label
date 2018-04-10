@@ -72,7 +72,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <script>
     suite('basic', function() {
-
       test('id generated on creation', function() {
         var e = document.createElement('iron-label');
         document.body.appendChild(e);
@@ -94,20 +93,22 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       a11ySuite('MultiElementWrapper');
       a11ySuite('ExplicitId');
       a11ySuite('TrivialSelector');
-
     });
 
     suite('targeting', function() {
-
       function expectedTarget(expected, label) {
         assert.ok(expected, 'expected is defined');
         assert.ok(label, 'label is defined');
         var actual = label._findTarget();
         assert.equal(actual, expected, 'target is expected');
         assert.ok(expected.hasAttribute('aria-labelledby'), 'has aria labelledby');
-        assert.equal(expected.getAttribute('aria-labelledby'), label.id, 'aria-labelledby points to iron-label');
+        assert.equal(
+            expected.getAttribute('aria-labelledby'),
+            label.id,
+            'aria-labelledby points to iron-label');
         if (label.for) {
-          assert.equal(label.getAttribute('for'), label.for, 'for property reflected');
+          assert.equal(
+              label.getAttribute('for'), label.for, 'for property reflected');
         }
       }
 
@@ -129,7 +130,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         var expected = label.nextElementSibling;
         expectedTarget(expected, label);
       });
-
     });
 
     suite('dynamic targeting', function() {
@@ -152,9 +152,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         assert.equal(one.getAttribute('aria-labelledby'), label.id);
         assert.notOk(nested.hasAttribute('aria-labelledby'));
       });
-
     });
-
   </script>
 
 </body>

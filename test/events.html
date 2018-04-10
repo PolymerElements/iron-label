@@ -50,7 +50,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <script>
       suite('event handling', function() {
-
         suite('target inside', function() {
           var inside, target;
           setup(function() {
@@ -121,8 +120,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           var reordered, target;
           setup(function() {
             reordered = fixture('Reordered');
-            target =
-              Polymer.dom(reordered).querySelector('[iron-label-target]');
+            target = Polymer.dom(reordered).querySelector('[iron-label-target]');
           });
 
           test('target has aria-labelledby', function() {
@@ -145,7 +143,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
             assert.equal(target.checked, true);
           });
         });
-
       });
     </script>
 

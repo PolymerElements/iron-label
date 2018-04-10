@@ -58,15 +58,13 @@ All taps on the `iron-label` will be forwarded to the "target" element.
     Polymer.IronLabel = Polymer({
       is: 'iron-label',
 
-      listeners: {
-        'tap': '_tapHandler'
-      },
+      listeners: {'tap': '_tapHandler'},
 
       properties: {
         /**
-          * An ID reference to another element that needs to be
-          * labelled by this `iron-label` element.
-          */
+         * An ID reference to another element that needs to be
+         * labelled by this `iron-label` element.
+         */
         for: {
           type: String,
           value: '',
