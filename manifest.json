@@ -1,0 +1,30 @@
+{
+  "files": {
+    "iron-label.html": {
+      "convertedUrl": "iron-label.js",
+      "exports": {
+        "Polymer.IronLabel": "IronLabel"
+      }
+    },
+    "index.html": {
+      "convertedUrl": "index.html",
+      "exports": {}
+    },
+    "demo/index.html": {
+      "convertedUrl": "demo/index.html",
+      "exports": {}
+    },
+    "test/basic.html": {
+      "convertedUrl": "test/basic.html",
+      "exports": {}
+    },
+    "test/events.html": {
+      "convertedUrl": "test/events.html",
+      "exports": {}
+    },
+    "test/index.html": {
+      "convertedUrl": "test/index.html",
+      "exports": {}
+    }
+  }
+}

@@ -16,14 +16,25 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <title>Iron Label Demo</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../iron-label.html">
-    <link rel="import" href="../../paper-checkbox/paper-checkbox.html">
-    <link rel="import" href="../../paper-slider/paper-slider.html">
-    <link rel="import" href="../../paper-button/paper-button.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-    <custom-style>
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script type="module" src="../iron-label.js"></script>
+    <script type="module" src="../../paper-checkbox/paper-checkbox.js"></script>
+    <script type="module" src="../../paper-slider/paper-slider.js"></script>
+    <script type="module" src="../../paper-button/paper-button.js"></script>
+    <script type="module" src="../../iron-demo-helpers/demo-snippet.js"></script>
+    <script type="module" src="../../iron-demo-helpers/demo-pages-shared-styles.js"></script>
+    <!-- FIXME(polymer-modulizer):
+        These imperative modules that innerHTML your HTML are
+        a hacky way to be sure that any mixins in included style
+        modules are ready before any elements that reference them are
+        instantiated, otherwise the CSS @apply mixin polyfill won't be
+        able to expand the underlying CSS custom properties.
+        See: https://github.com/Polymer/polymer-modulizer/issues/154
+        -->
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<custom-style>
       <style is="custom-style" include="demo-pages-shared-styles">
         label, iron-label {
           line-height: 2;
@@ -32,10 +43,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           display: inline;
         }
       </style>
-    </custom-style>
+    </custom-style>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
   </head>
   <body>
-    <div class="vertical-section-container centered">
+    <script type="module">
+const $_documentContainer = document.createElement('template');
+
+$_documentContainer.innerHTML = `<div class="vertical-section-container centered">
       <h3>Native label element</h3>
       <demo-snippet>
         <template>
@@ -51,7 +68,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </label><br>
 
           <label>native label wrapping a paper-button (should not work)
-            <paper-button raised>Button</paper-button>
+            <paper-button raised="">Button</paper-button>
           </label>
         </template>
       </demo-snippet>
@@ -79,10 +96,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           </iron-label><br>
 
           <iron-label>iron-label wrapping a paper-button
-            <paper-button raised>Button</paper-button>
+            <paper-button raised="">Button</paper-button>
           </iron-label>
         </template>
       </demo-snippet>
-    </div>
+    </div>`;
+
+document.body.appendChild($_documentContainer.content);
+</script>
   </body>
 </html>
