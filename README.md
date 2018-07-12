@@ -1,70 +1,80 @@
 
-<!---
-
-This README is automatically generated from the comments in these files:
-iron-label.html
-
-Edit those files, and our readme bot will duplicate them over here!
-Edit this file, and the bot will squash your changes :)
-
-The bot does some handling of markdown. Please file a bug if it does the wrong
-thing! https://github.com/PolymerLabs/tedium/issues
-
--->
-
+[![Published on NPM](https://img.shields.io/npm/v/@polymer/iron-label.svg)](https://www.npmjs.com/package/@polymer/iron-label)
 [![Build status](https://travis-ci.org/PolymerElements/iron-label.svg?branch=master)](https://travis-ci.org/PolymerElements/iron-label)
-
-_[Demo and API docs](https://elements.polymer-project.org/elements/iron-label)_
-
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://webcomponents.org/element/@polymer/iron-label)
 
 ## &lt;iron-label&gt;
+`<iron-label>` provides a version of the `<label>` element that works with Custom Elements as well as native elements. All text in the `iron-label` will be applied to the target element as a screen-reader accessible description.
 
-`<iron-label>` provides a version of the `<label>` element that works with Custom Elements as well as native elements.
+See: [Documentation](https://www.webcomponents.org/element/@polymer/iron-label),
+  [Demo](https://www.webcomponents.org/element/@polymer/iron-label/demo/demo/index.html).
 
-All text in the `iron-label` will be applied to the target element as a screen-reader accessible description.
+## Usage
 
-There are three ways to use `iron-label` to target an element:
-
-1. place an element inside iron-label and some text:
-
-```html
- <iron-label>
-   Label for the Button
-   <paper-button>button</paper-button>
- </iron-label>
+### Installation
+```
+npm install --save @polymer/iron-label
 ```
 
-
-1. place some elements inside iron-label and target one with the `iron-label-target` attribute.
-The other elements will provide the label for that element
-Note: This is not necessary if the element you want to label is the first
-element child of iron-label:
-
+### In an html file
 ```html
- <iron-label>
-   <span>Label for the Button</span>
-   <paper-button iron-label-target>button</paper-button>
- </iron-label>
+<html>
+  <head>
+    <script type="module">
+      import '@polymer/iron-label/iron-label.js';
+      import '@polymer/paper-button/paper-button.js';
+    </script>
+  </head>
+  <body>
+    <iron-label>Label for a button
+      <paper-button>button</paper-button>
+    </iron-label>
 
- <iron-label>
-   <paper-button>button</paper-button>
-   <span>Label for the Button</span>
- </iron-label>
+    <iron-label for="foo">Label for the foo button</iron-label>
+    <paper-button id="foo">Another button</paper-button>
+  </body>
+</html>
+```
+### In a Polymer 3 element
+```js
+import {PolymerElement, html} from '@polymer/polymer';
+import '@polymer/iron-label/iron-label.js';
+import '@polymer/paper-button/paper-button.js';
+
+class SampleElement extends PolymerElement {
+  static get template() {
+    return html`
+      <iron-label>Label for a button
+        <paper-button>button</paper-button>
+      </iron-label>
+
+      <iron-label for="foo">Label for the foo button</iron-label>
+      <paper-button id="foo">Another button</paper-button>
+    `;
+  }
+}
+customElements.define('sample-element', SampleElement);
 ```
 
+## Contributing
+If you want to send a PR to this element, here are
+the instructions for running the tests and demo locally:
 
-1. Set the `for` attribute on the `iron-label` element with the id of the target
-element in the same document or ShadowRoot:
-
-```html
- <iron-label for="foo">
-   Context for the button with the "foo" class"
- </iron-label>
- <paper-button id="foo">Far away button</paper-button>
+### Installation
+```sh
+git clone https://github.com/PolymerElements/iron-label
+cd iron-label
+npm install
+npm install -g polymer-cli
 ```
 
+### Running the demo locally
+```sh
+polymer serve --npm
+open http://127.0.0.1:<port>/demo/
+```
 
-
-All taps on the `iron-label` will be forwarded to the "target" element.
-
-
+### Running the tests
+```sh
+polymer test --npm
+```
