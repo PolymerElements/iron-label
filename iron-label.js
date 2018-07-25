@@ -1,16 +1,24 @@
 /**
 @license
 Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+This code may only be used under the BSD style license found at
+http://polymer.github.io/LICENSE.txt The complete set of authors may be found at
+http://polymer.github.io/AUTHORS.txt The complete set of contributors may be
+found at http://polymer.github.io/CONTRIBUTORS.txt Code distributed by Google as
+part of the polymer project is also subject to an additional IP rights grant
+found at http://polymer.github.io/PATENTS.txt
 */
-/**
-`<iron-label>` provides a version of the `<label>` element that works with Custom Elements as well as native elements.
+import '@polymer/polymer/polymer-legacy.js';
 
-All text in the `iron-label` will be applied to the target element as a screen-reader accessible description.
+import {Polymer} from '@polymer/polymer/lib/legacy/polymer-fn.js';
+import {dom} from '@polymer/polymer/lib/legacy/polymer.dom.js';
+
+/**
+`<iron-label>` provides a version of the `<label>` element that works with
+Custom Elements as well as native elements.
+
+All text in the `iron-label` will be applied to the target element as a
+screen-reader accessible description.
 
 There are three ways to use `iron-label` to target an element:
 
@@ -21,10 +29,10 @@ There are three ways to use `iron-label` to target an element:
           <paper-button>button</paper-button>
         </iron-label>
 
-2. place some elements inside iron-label and target one with the `iron-label-target` attribute.
-The other elements will provide the label for that element
-Note: This is not necessary if the element you want to label is the first
-element child of iron-label:
+2. place some elements inside iron-label and target one with the
+`iron-label-target` attribute. The other elements will provide the label for
+that element Note: This is not necessary if the element you want to label is the
+first element child of iron-label:
 
         <iron-label>
           <span>Label for the Button</span>
@@ -51,17 +59,7 @@ All taps on the `iron-label` will be forwarded to the "target" element.
 @demo demo/index.html
 @homepage polymer.github.io
 */
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
-import '@polymer/polymer/polymer-legacy.js';
-
-import { Polymer as Polymer$0 } from '@polymer/polymer/lib/legacy/polymer-fn.js';
-import { dom } from '@polymer/polymer/lib/legacy/polymer.dom.js';
-
-export const IronLabel = Polymer$0({
+export const IronLabel = Polymer({
   is: 'iron-label',
 
   listeners: {'tap': '_tapHandler'},
