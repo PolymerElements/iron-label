@@ -61,6 +61,7 @@ All taps on the `iron-label` will be forwarded to the "target" element.
 */
 export const IronLabel = Polymer({
   is: 'iron-label',
+  _template: null,
 
   listeners: {'tap': '_tapHandler'},
 
