@@ -93,7 +93,7 @@ export const IronLabel = Polymer({
   // generate a unique id for this element
   _generateLabelId: function() {
     if (!this.id) {
-      var id = 'iron-label-' + IronLabel._labelNumber++;
+      var id = 'iron-label-' + _labelNumber++;
       dom(this).setAttribute('id', id);
     }
   },
@@ -142,4 +142,4 @@ export const IronLabel = Polymer({
 });
 
 // global counter for unique label ids
-IronLabel._labelNumber = 0;
+let _labelNumber = 0;
