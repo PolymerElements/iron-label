@@ -54,13 +54,12 @@ element in the same document or ShadowRoot:
 
 All taps on the `iron-label` will be forwarded to the "target" element.
 
-@group Iron Elements
 @element iron-label
 @demo demo/index.html
-@homepage polymer.github.io
 */
 export const IronLabel = Polymer({
   is: 'iron-label',
+  /** @override */
   _template: null,
 
   listeners: {'tap': '_tapHandler'},
@@ -82,10 +81,12 @@ export const IronLabel = Polymer({
     _forElement: Object
   },
 
+  /** @override */
   attached: function() {
     this._forChanged();
   },
 
+  /** @override */
   ready: function() {
     this._generateLabelId();
   },
